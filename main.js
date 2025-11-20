@@ -9,7 +9,7 @@ app.use(express.json())
 // AiNaWX1i5lMFMSez
 // FirstMongoWork
 
-mongoose.connect('mongodb://127.0.0.1:27017/test')
+mongoose.connect('mongodb+srv://FirstMongoWork:AiNaWX1i5lMFMSez@cluster0.7ooynjm.mongodb.net/?appName=Cluster0')
   .then(() => console.log(' mongo db Connected!'));
 
 app.get('/', (req ,res)=>{
