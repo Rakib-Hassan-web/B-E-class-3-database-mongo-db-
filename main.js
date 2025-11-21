@@ -9,7 +9,7 @@ app.use(express.json())
 // AiNaWX1i5lMFMSez
 // FirstMongoWork
 
-mongoose.connect('mongodb+srv://FirstMongoWork:AiNaWX1i5lMFMSez@cluster0.7ooynjm.mongodb.net/?appName=Cluster0')
+mongoose.connect('mongodb+srv://FirstMongoWork:AiNaWX1i5lMFMSez@cluster0.7ooynjm.mongodb.net/FirstMongoWork?appName=Cluster0')
   .then(() => console.log(' mongo db Connected!'));
 
   const Schema = mongoose.Schema;
@@ -21,6 +21,8 @@ const UserSchema = new Schema({
   Password: String,
  
 });
+
+const user =mongoose.model('AllUser', UserSchema)
 
 app.get('/', (req ,res)=>{
 
