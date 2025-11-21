@@ -29,7 +29,7 @@ const user =mongoose.model('AllUser', UserSchema)
 
 
 
-app.get('/register',  (req ,res)=>{
+app.get('/register', async (req ,res)=>{
 
 
     try {
@@ -42,6 +42,7 @@ if(!Email) return res.status(400).send({Error: 'Email is required'})
 if(!Password) return res.status(400).send({Error: 'Password is required'})
 
 
+const existinguser = await user.findOne({Email})
 
 
    const newUser =new user ({
@@ -74,7 +75,7 @@ app.get('/Login', async  (req ,res)=>{
    const newUser = await user.findOne({Email}) 
 
 if(!newUser) return res.status(400).send({Error: 'user does not exist'})
-// if(!Password) return res.status(400).send({Error: 'Password is required'})
+if(newUser.Password !== Password) return res.status(400).send({Error: 'Password dosent match'})
 
 
 
