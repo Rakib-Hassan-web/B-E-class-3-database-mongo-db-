@@ -44,6 +44,7 @@ if(!Password) return res.status(400).send({Error: 'Password is required'})
 
 const existinguser = await user.findOne({Email})
 
+if(existinguser) return res.status(400).send({Error: 'User already Exists'})
 
    const newUser =new user ({
     Name,
