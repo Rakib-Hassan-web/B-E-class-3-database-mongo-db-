@@ -2,6 +2,7 @@
 
 const express =require('express')
 const mongoose = require('mongoose');
+// const { use } = require('react');
 
 const app =express()
 app.use(express.json())
@@ -24,9 +25,36 @@ const UserSchema = new Schema({
 
 const user =mongoose.model('AllUser', UserSchema)
 
+
+
+
+
+app.get('/register',  (req ,res)=>{
+
+
+   const { Name, Email, Password} =req.body ;
+
+
+   const newUser =new user ({
+    Name,
+    Email,
+    Password
+   })
+
+newUser.save()
+
+    res.status(201).send( { sucess:'reg successful for user' , newUser  })
+})
+
+
+
+
+
+
+
 app.get('/', (req ,res)=>{
 
-    res.send('jadsa')
+    res.send('')
 
 })
 
