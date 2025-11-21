@@ -12,6 +12,16 @@ app.use(express.json())
 mongoose.connect('mongodb+srv://FirstMongoWork:AiNaWX1i5lMFMSez@cluster0.7ooynjm.mongodb.net/?appName=Cluster0')
   .then(() => console.log(' mongo db Connected!'));
 
+  const Schema = mongoose.Schema;
+
+
+const UserSchema = new Schema({
+  Name: String,
+  Email: String,
+  Password: String,
+ 
+});
+
 app.get('/', (req ,res)=>{
 
     res.send('jadsa')
