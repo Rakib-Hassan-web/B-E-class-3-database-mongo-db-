@@ -32,7 +32,16 @@ const user =mongoose.model('AllUser', UserSchema)
 app.get('/register',  (req ,res)=>{
 
 
+    try {
+        
    const { Name, Email, Password} =req.body ;
+
+
+if(!Name) return res.status(400).send({Error: 'Name is required'})
+if(!Email) return res.status(400).send({Error: 'Email is required'})
+if(!Password) return res.status(400).send({Error: 'Password is required'})
+
+
 
 
    const newUser =new user ({
@@ -44,11 +53,41 @@ app.get('/register',  (req ,res)=>{
 newUser.save()
 
     res.status(201).send( { sucess:'reg successful for user' , newUser  })
+        
+    } catch (error) {
+        res.status(500).send({error:'reg failed'})
+    }
+
+
 })
 
 
 
+app.get('/Login', async  (req ,res)=>{
 
+
+    try {
+        
+   const { Email, Password} =req.body ;
+
+
+   const newUser = await user.findOne({Email}) 
+
+if(!newUser) return res.status(400).send({Error: 'user does not exist'})
+// if(!Password) return res.status(400).send({Error: 'Password is required'})
+
+
+
+
+
+    res.status(201).send( { sucess:'login successful ' , newUser  })
+        
+    } catch (error) {
+        res.status(500).send({error:'login failed'})
+    }
+
+
+})
 
 
 
