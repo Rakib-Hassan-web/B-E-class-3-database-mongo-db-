@@ -144,7 +144,7 @@ const Schema = mongoose.Schema;
 const AllUSer = new Schema({
 
     FullName :String,
-    Email: {type:String , unique:true},
+    Email: {type:String , unique:true , required :true},
     Passaword:String,
 });
 
