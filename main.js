@@ -139,7 +139,14 @@ mongoose.connect('mongodb+srv://FirstMongoWork:laUEUPyoJzL7nkEc@cluster0.7ooynjm
   .then(() => console.log(' DATABASE Connected!'));
 
 
+const Schema = mongoose.Schema;
 
+const AllUSer = new Schema({
+
+    FullName :String,
+    Email: {type:String , unique:true},
+    Passaword:String,
+});
 
 
 
