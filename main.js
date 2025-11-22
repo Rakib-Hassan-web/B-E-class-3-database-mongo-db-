@@ -25,7 +25,11 @@
 
 //     try {
 
-
+//         const {
+//             Name,
+//             Email,
+//             Password
+//         } = req.body;
 
 //         if (!Name) return res.status(400).send({
 //             Error: 'Name is required'
