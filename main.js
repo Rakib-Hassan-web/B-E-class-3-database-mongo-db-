@@ -135,7 +135,7 @@ app.use(express.json())
 
 
 
-mongoose.connect('mongodb+srv://FirstMongoWork:laUEUPyoJzL7nkEc@cluster0.7ooynjm.mongodb.net/?appName=Cluster0')
+mongoose.connect('mongodb+srv://FirstMongoWork:laUEUPyoJzL7nkEc@cluster0.7ooynjm.mongodb.net/FirstMongoWork?appName=Cluster0')
   .then(() => console.log(' DATABASE Connected!'));
 
 
