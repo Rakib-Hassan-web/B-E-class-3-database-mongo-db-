@@ -136,7 +136,7 @@ app.use(express.json())
 
 
 mongoose.connect('mongodb://127.0.0.1:27017/test')
-  .then(() => console.log(' data base Connected!'));
+  .then(() => console.log(' DATABASE Connected!'));
 
 
 app.listen(4000 ,()=>{
