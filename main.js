@@ -127,10 +127,16 @@
 
 const express = require('express')
 
-
+const mongoose = require('mongoose');
 
 const app =express()
 
+app.use(express.json())
+
+
+
+mongoose.connect('mongodb://127.0.0.1:27017/test')
+  .then(() => console.log(' data base Connected!'));
 
 
 app.listen(4000 ,()=>{
