@@ -37,7 +37,7 @@
 //             Error: 'Password is required'
 //         })
 
-//        const existinguser = await user.findOne({
+//         const existinguser = await user.findOne({
 //             Email
 //         })
 
