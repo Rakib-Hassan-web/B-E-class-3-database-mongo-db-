@@ -135,8 +135,13 @@ app.use(express.json())
 
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/test')
+mongoose.connect('mongodb+srv://FirstMongoWork:laUEUPyoJzL7nkEc@cluster0.7ooynjm.mongodb.net/?appName=Cluster0')
   .then(() => console.log(' DATABASE Connected!'));
+
+
+
+
+
 
 
 app.listen(4000 ,()=>{
