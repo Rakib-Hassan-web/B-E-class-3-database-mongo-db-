@@ -162,11 +162,18 @@ app.get('/register',(req,res)=>{
 try {
 
 
-  const{ FullName ,Email ,Passaword}=req.body;
+  const{ FullName ,Email ,Password}=req.body;
 
   if(!FullName) return res.status(401).send({error:'Full Name is required'})
   if(!Email) return res.status(401).send({error:'email is required'})
-  if(!Passaword) return res.status(401).send({error:'pass is required'})
+  if(!Password) return res.status(401).send({error:'pass is required'})
+
+
+    const existinguser =user.findOne({
+      Email
+    })
+
+    if(existinguser) return res.send({error : "email already exist"})
 
 
   
