@@ -157,6 +157,30 @@ const user =mongoose.model('alluser',AllUSer)
 
 app.get('/register',(req,res)=>{
 
+
+
+try {
+
+
+  const{ FullName ,Email ,Passaword}=req.body;
+
+  if(!FullName) return res.status(401).send({error:'Full Name is required'})
+  if(!Email) return res.status(401).send({error:'email is required'})
+  if(!Passaword) return res.status(401).send({error:'pass is required'})
+
+
+  
+} catch (error) { error :'reg failed'
+  
+}
+
+
+
+
+
+
+
+
   res.send('register suc')
 })
 
