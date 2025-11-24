@@ -156,6 +156,33 @@ const user =mongoose.model('sobuser',AllUSer)
 
 
 app.get('/registration' , ( req,res)=>{
+
+  
+  
+  
+  
+  try {
+  const {FullName,Email,Passaword } =req.body;
+
+
+if(!FullName) return res.status(400).send({error:'fullname nai kn'})
+if(!Email) return res.status(400).send({error:'Email nai kn'})
+if(!Passaword) return res.status(400).send({error:'Passaword nai kn'})
+
+
+
+
+
+
+
+  
+} catch (error) { res.status(500).send({error: 'reg failed'})
+  
+}
+
+
+
+
   res.send('secc')
 })
 
