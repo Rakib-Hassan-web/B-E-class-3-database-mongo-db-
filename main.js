@@ -154,6 +154,12 @@ const user =mongoose.model('sobuser',AllUSer)
 // ----reg-
 
 
+
+app.get('/registration' , ( req,res)=>{
+  res.send('secc')
+})
+
+
 app.listen(4000 ,()=>{
     console.log('server running on port 4000')
 })
