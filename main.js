@@ -182,6 +182,8 @@ if(!Passaword) return res.status(400).send({error:'Passaword nai kn'})
     Email,Passaword
   })
 
+  notun.save()
+
 
 
 
@@ -197,6 +199,13 @@ if(!Passaword) return res.status(400).send({error:'Passaword nai kn'})
 
   res.send('secc')
 })
+
+
+
+
+
+// --login--
+
 
 
 app.listen(4000 ,()=>{
