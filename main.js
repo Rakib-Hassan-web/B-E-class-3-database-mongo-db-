@@ -155,7 +155,7 @@ const user =mongoose.model('sobuser',AllUSer)
 
 
 
-app.get('/registration' , ( req,res)=>{
+app.get('/registration' , async ( req,res)=>{
 
   
   
@@ -169,6 +169,18 @@ if(!FullName) return res.status(400).send({error:'fullname nai kn'})
 if(!Email) return res.status(400).send({error:'Email nai kn'})
 if(!Passaword) return res.status(400).send({error:'Passaword nai kn'})
 
+
+
+ const exist = await user.findOne({
+  Email
+ })
+
+ if(exist) return res.status(400).send({error:'user already exist'})
+
+  const notun =new user({
+    FullName,
+    Email,Passaword
+  })
 
 
 
