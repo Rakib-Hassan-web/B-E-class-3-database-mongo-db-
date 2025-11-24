@@ -151,52 +151,7 @@ const AllUSer = new Schema({
 
 const user =mongoose.model('sobuser',AllUSer)
 
-
-
-// ----------register sec----------
-
-app.get('/register', async(req,res)=>{
-
-
-
-try {
-
-
-  const{ FullName ,Email ,Password}=req.body;
-
-  if(!FullName) return res.status(401).send({error:'Full Name is required'})
-  if(!Email) return res.status(401).send({error:'email is required'})
-  if(!Password) return res.status(401).send({error:'pass is required'})
-
-
-    const existinguser = await user.findOne({
-      Email
-    })
-
-    if(existinguser) return res.send({error : "email already exist"})
-
-
-      const newuser = new user({
-        FullName,Email,Password
-      })
-
-      newuser.save()
-
-  
-} catch (error) { error :'reg failed'
-  
-}
-
-
-
-
-
-
-
-
-  res.send('register suc')
-})
-
+// ----reg-
 
 
 app.listen(4000 ,()=>{
