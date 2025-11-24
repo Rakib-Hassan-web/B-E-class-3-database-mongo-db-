@@ -149,6 +149,12 @@ const AllUSer = new Schema({
 });
 
 
+const user =mongoose.model('alluser',AllUSer)
+
+
+
+
+
 
 
 app.listen(4000 ,()=>{
