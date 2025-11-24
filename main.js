@@ -149,13 +149,13 @@ const AllUSer = new Schema({
 });
 
 
-const user =mongoose.model('alluser',AllUSer)
+const user =mongoose.model('sobuser',AllUSer)
 
 
 
 // ----------register sec----------
 
-app.get('/register',(req,res)=>{
+app.get('/register', async(req,res)=>{
 
 
 
@@ -169,12 +169,18 @@ try {
   if(!Password) return res.status(401).send({error:'pass is required'})
 
 
-    const existinguser =user.findOne({
+    const existinguser = await user.findOne({
       Email
     })
 
     if(existinguser) return res.send({error : "email already exist"})
 
+
+      const newuser = new user({
+        FullName,Email,Password
+      })
+
+      newuser.save()
 
   
 } catch (error) { error :'reg failed'
