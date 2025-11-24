@@ -153,7 +153,12 @@ const user =mongoose.model('alluser',AllUSer)
 
 
 
+// ----------register sec----------
 
+app.get('/register',(req,res)=>{
+
+  res.send('register suc')
+})
 
 
 
